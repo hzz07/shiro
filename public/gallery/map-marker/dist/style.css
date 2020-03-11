@@ -1,0 +1,78 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100vh;
+  background: #ECEFFC;
+}
+
+.marker {
+  position: relative;
+  --marker-radius: 1em;
+  --marker-diameter: calc(var(--marker-radius) * 2);
+  --marker-color: #eb2f06;
+}
+.marker .pin {
+  position: relative;
+  z-index: 1;
+  width: var(--marker-diameter);
+  height: var(--marker-diameter);
+  background: var(--marker-color);
+  border-radius: 50% 50% 0 50%;
+  -webkit-mask: radial-gradient(transparent calc(var(--marker-radius) / 2), grey calc(var(--marker-radius) / 2 + 0.5px), black calc(var(--marker-radius) / 2));
+          mask: radial-gradient(transparent calc(var(--marker-radius) / 2), grey calc(var(--marker-radius) / 2 + 0.5px), black calc(var(--marker-radius) / 2));
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.marker .shadow {
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: var(--marker-radius);
+  height: var(--marker-radius);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  -webkit-transform: translate(50%, -10%) rotateX(60deg);
+          transform: translate(50%, -10%) rotateX(60deg);
+}
+.marker .shadow::before {
+  position: absolute;
+  content: "";
+  width: var(--marker-diameter);
+  height: var(--marker-diameter);
+  background: transparent;
+  border: 1px solid var(--marker-color);
+  border-radius: inherit;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+}
+
+@-webkit-keyframes pulse {
+  50% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}

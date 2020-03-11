@@ -5,25 +5,39 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #e8ebfb;
+  background: #ECEFFC;
 }
 
 .accordion-menu {
   width: 300px;
+  padding: 0;
   border-radius: 8px;
   overflow: hidden;
   list-style-type: none;
 
   .accordion-menu__item {
+
     .accrodion-menu__link {
       position: relative;
       display: block;
-      padding: 1em 2em;
+      padding: 16px 20px;
       font-family: Lato, sans-serif;
       text-decoration: none;
       color: white;
       background: #3498db;
       transition: 0.5s;
+
+      svg {
+        margin: 0 10px -2px 0;
+
+        &.chevron {
+          position: absolute;
+          top: 16px;
+          right: 10px;
+          color: white;
+          transition: 0.5s;
+        }
+      }
 
       // arrow
       &:not(:last-child)::before {
@@ -40,8 +54,10 @@ body {
 
     .accordion-menu__submenu {
       max-height: 0;
+      padding: 0;
       background: #333;
       overflow: hidden;
+      list-style-type: none;
       transition: 0.5s;
 
       a {
@@ -58,8 +74,14 @@ body {
       }
     }
 
-    &:target .accordion-menu__submenu {
-      max-height: 10em;
+    &:target {
+      .accrodion-menu__link svg.chevron {
+        transform: rotate(0.5turn);
+      }
+
+      .accordion-menu__submenu {
+        max-height: 10em;
+      }
     }
   }
 }

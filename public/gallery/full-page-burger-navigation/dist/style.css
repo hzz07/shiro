@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#burger-toggle {
+  position: absolute;
+  appearance: none;
+  opacity: 0;
+}
+#burger-toggle:checked ~ .overlay {
+  opacity: 1;
+  transform: scale(160);
+}
+#burger-toggle:checked ~ nav {
+  pointer-events: auto;
+}
+#burger-toggle:checked ~ nav ul li {
+  opacity: 1;
+  transform: translateX(0);
+}
+#burger-toggle:checked ~ main {
+  opacity: 0.5;
+  filter: blur(5px);
+  pointer-events: none;
+}
+#burger-toggle:checked ~ .burger-menu .line:nth-child(1) {
+  transform: translateY(calc(var(--burger-menu-radius) / 5)) rotate(45deg);
+}
+#burger-toggle:checked ~ .burger-menu .line:nth-child(2) {
+  transform: scaleX(0);
+}
+#burger-toggle:checked ~ .burger-menu .line:nth-child(3) {
+  transform: translateY(calc(var(--burger-menu-radius) / -5)) rotate(-45deg);
+}
+
+.burger-menu {
+  --burger-menu-radius: 4em;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 100;
+  display: block;
+  width: var(--burger-menu-radius);
+  height: var(--burger-menu-radius);
+  background: white;
+  border: solid 2px rgba(149, 166, 167, 0.4);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.burger-menu .line {
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: rgba(43, 61, 79, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.burger-menu .line:nth-child(1) {
+  top: 30%;
+}
+.burger-menu .line:nth-child(2) {
+  top: 50%;
+}
+.burger-menu .line:nth-child(3) {
+  top: 70%;
+}
+.burger-menu .line::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2980b9;
+  transform: translateX(-100%);
+  transition: all 0.25s ease;
+}
+.burger-menu .line:nth-child(2)::after {
+  transition-delay: 0.1s;
+}
+.burger-menu .line:nth-child(3)::after {
+  transition-delay: 0.2s;
+}
+.burger-menu:hover {
+  box-shadow: 0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042), 1px 1px 2px rgba(0, 0, 0, 0.061), 1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075), 3.4px 3.4px 6.7px rgba(0, 0, 0, 0.089), 6.3px 6.3px 12.5px rgba(0, 0, 0, 0.108), 15px 15px 30px rgba(0, 0, 0, 0.15);
+}
+.burger-menu:hover .line::after {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 2em;
+  height: 2em;
+  background: rgba(40, 127, 184, 0.9);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  will-change: transform;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+nav ul {
+  position: fixed;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style-type: none;
+}
+nav ul li {
+  padding: 6px 0;
+  margin: 1em 3em;
+  opacity: 0;
+  transition: 0.6s cubic-bezier(0.365, 0.84, 0.44, 1);
+}
+nav ul li:nth-child(odd) {
+  transform: translateX(-100%);
+}
+nav ul li:nth-child(even) {
+  transform: translateX(100%);
+}
+nav ul li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+nav ul li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+nav ul li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+nav ul li:nth-child(4) {
+  transition-delay: 0.2s;
+}
+nav ul li a {
+  position: relative;
+  display: block;
+  padding: 5px;
+  font-family: Lato, sans-serif;
+  font-size: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.5s;
+}
+nav ul li a::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: #ff4281;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+main {
+  padding: 0.5em calc(50% - 400px);
+  font-family: Lato, sans-serif;
+  transition: 0.5s ease-in-out;
+}
+main h1 {
+  text-align: center;
+}

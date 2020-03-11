@@ -1,30 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
-$btn-color: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-$text-color: #222;
-
 body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #222;
+  background: #ECEFFC;
 }
 
 .login {
   position: relative;
   width: 10em;
   height: 4em;
-  color: $text-color;
+  color: #eee;
   font-family: Lato, sans-serif;
   font-size: 1.5em;
   text-align: center;
   text-transform: uppercase;
-  background: $btn-color;
+  background: #1F1E1E;
   border: none;
   border-radius: 4em;
   outline: none;
-  box-shadow: 0 0.5em 1em #222;
+  box-shadow: 0 1.4px 2.8px rgba(0, 0, 0, 0.141),
+    0 3.3px 6.7px rgba(0, 0, 0, 0.202), 0 6.3px 12.5px rgba(0, 0, 0, 0.25),
+    0 11.2px 22.3px rgba(0, 0, 0, 0.298), 0 20.9px 41.8px rgba(0, 0, 0, 0.359),
+    0 50px 100px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: all 0.5s;
 
@@ -37,9 +37,26 @@ body {
     opacity: 0;
     transition: opacity 0.3s 0.3s;
 
-    & .line-scale-pulse-out-rapid div {
-      background-color: $text-color;
+    .line-scale-pulse-out-rapid div {
+      display: inline-flex;
+      width: 4px;
+      height: 35px;
+      margin: 2px;
+      border-radius: 2px;
+      background-color: white;
+      animation: line-scale-pulse-out-rapid 0.9s -0.5s infinite cubic-bezier(.11, .49, .38, .78);
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        animation-delay: -0.25s;
+      }
+
+      &:nth-child(1),
+      &:nth-child(5) {
+        animation-delay: 0s;
+      }
     }
+
   }
 
   .tick {
@@ -47,14 +64,14 @@ body {
     left: 1.5em;
     bottom: 1.2em;
     opacity: 0;
-    stroke: $text-color;
+    stroke: #eee;
     stroke-width: 5px;
     stroke-dasharray: 36px;
     stroke-dashoffset: 36px;
     transition: opacity 0.3s;
   }
 
-  &.active {
+  &.loading {
     width: 4em;
     color: transparent;
     pointer-events: none;
@@ -65,7 +82,7 @@ body {
     }
   }
 
-  &.verified {
+  &.success {
     .loader {
       opacity: 0;
     }
@@ -74,6 +91,18 @@ body {
       opacity: 1;
       animation: show-tick 0.8s 0.4s forwards;
     }
+  }
+}
+
+@keyframes line-scale-pulse-out-rapid {
+
+  from,
+  90% {
+    transform: scaleY(1);
+  }
+
+  80% {
+    transform: scaleY(0.3);
   }
 }
 

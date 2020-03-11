@@ -1,29 +1,64 @@
 body {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #222;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: #ECEFFC;
+}
+
+#burger-toggle {
+  appearance: none;
+  opacity: 0;
+
+  &:checked {
+
+    // Here don't use box-shadow to make overlay because it will damage performance.
+    &~.overlay {
+      opacity: 1;
+      transform: scale(160);
+    }
+
+    &~.burger-menu {
+      .line {
+        &:nth-child(1) {
+          transform: translateY(calc(var(--burger-menu-radius) / 5)) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: scaleX(0);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(calc(var(--burger-menu-radius) / -5)) rotate(-45deg);
+        }
+      }
+    }
+  }
 }
 
 .burger-menu {
+  --burger-menu-radius: 4em;
   position: relative;
-  z-index: 2;
-  width: 10em;
-  height: 10em;
-  background: #222;
-  border: solid 2px black;
+  z-index: 100;
+  display: block;
+  width: var(--burger-menu-radius);
+  height: var(--burger-menu-radius);
+  background: white;
+  border: solid 2px hsla(184, 9%, 62%, 0.4);
   border-radius: 50%;
   outline: none;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 
   .line {
     position: absolute;
     left: 25%;
     width: 50%;
     height: 3px;
-    background: black;
+    background: hsla(210, 29%, 24%, 0.3);
+    border-radius: 10px;
     overflow: hidden;
     transition: all 0.5s ease;
 
@@ -31,8 +66,12 @@ body {
       top: 30%;
     }
 
+    &:nth-child(2) {
+      top: 50%;
+    }
+
     &:nth-child(3) {
-      bottom: 30%;
+      top: 70%;
     }
 
     &::after {
@@ -42,7 +81,7 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      background: lightblue;
+      background: #2980b9;
       transform: translateX(-100%);
       transition: all 0.25s ease;
     }
@@ -55,28 +94,27 @@ body {
   }
 
   &:hover {
+    box-shadow:
+      0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042),
+      1px 1px 2px rgba(0, 0, 0, 0.061),
+      1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075),
+      3.4px 3.4px 6.7px rgba(0, 0, 0, 0.089),
+      6.3px 6.3px 12.5px rgba(0, 0, 0, 0.108),
+      15px 15px 30px rgba(0, 0, 0, 0.15);
+
     .line::after {
       transform: translateX(0);
     }
   }
+}
 
-  &.active {
-    box-shadow: 0 0 0 1000px lightblue;
-
-    .line {
-      &:nth-child(1) {
-        top: 50%;
-        transform: rotate(45deg);
-      }
-
-      &:nth-child(2) {
-        transform: scaleX(0);
-      }
-
-      &:nth-child(3) {
-        bottom: 50%;
-        transform: rotate(-45deg);
-      }
-    }
-  }
+.overlay {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background: hsla(204, 64%, 44%, 0.9);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  will-change: transform;
 }

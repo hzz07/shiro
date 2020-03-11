@@ -1,5 +1,287 @@
 export default [
   {
+    title: "masonry-gallery",
+    description: "砖石结构画廊",
+    tags: ["masonry", "image"]
+  },
+  {
+    title: "elastic-love",
+    description: "弹性动画的心形点赞图标",
+    tags: ["icon", "toggle", "heart", "love"]
+  },
+  {
+    title: "dropdown-select",
+    description: "下拉选择菜单交互",
+    tags: ["dropdown", "select"]
+  },
+  {
+    title: "material-input-field-with-validation",
+    description: "material风的输入框",
+    tags: ["form", "input", "material"]
+  },
+  {
+    title: "upload-file",
+    description: "文件上传进度交互",
+    tags: ["upload", "progress bar"]
+  },
+  { title: "bookmark", description: "书签图标", tags: ["icon", "bookmark"] },
+  {
+    title: "circle-arrow-nav",
+    description: "圈箭头导航",
+    tags: ["nav", "hover"]
+  },
+  {
+    title: "sao-confirm-modal",
+    description: "刀剑神域模态框",
+    tags: ["modal", "button"]
+  },
+  {
+    title: "cross-bar-glitch-text",
+    description: "交错条故障文字显现",
+    tags: ["text", "staggered", "glitch"]
+  },
+  {
+    title: "glitch-text-reveal",
+    description: "故障文字显现",
+    tags: ["text", "staggered", "glitch"]
+  },
+  { title: "timeline", description: "时间线", tags: ["timeline"] },
+  {
+    title: "staggered-bar-cross-text",
+    description: "交错条划过文字显现效果",
+    tags: ["text", "staggered"]
+  },
+  {
+    title: "map-marker",
+    description: "地图标记图标",
+    tags: ["icon", "marker"]
+  },
+  {
+    title: "landing-page-design",
+    description: "LP页面设计",
+    tags: ["landing page"]
+  },
+  {
+    title: "cursor-follow-hover-effect",
+    description: "鼠标跟随悬浮效果",
+    tags: ["cursor", "hover"]
+  },
+  {
+    title: "share-button-float-icon",
+    description: "分享按钮悬浮出现图标",
+    tags: ["button", "hover", "staggered"]
+  },
+  {
+    title: "header-underline",
+    description: "下划线悬浮菜单",
+    tags: ["menu", "hover"]
+  },
+  {
+    title: "staggered-blink-text-menu",
+    description: "交错闪烁文字菜单",
+    tags: ["menu", "hover", "text", "staggered"]
+  },
+  {
+    title: "spiral-loading",
+    description: "螺旋加载动画",
+    tags: ["loading", "staggered"]
+  },
+  {
+    title: "flex-frosted-image-gallery",
+    description: "flex风格的画廊",
+    tags: ["fullscreen", "filter", "hover"]
+  },
+  {
+    title: "menu-hover-strikethrough",
+    description: "获取焦点时线划过链接的菜单栏",
+    tags: ["menu", "hover"]
+  },
+  {
+    title: "product-carousel",
+    description: "不同颜色的产品轮播展示效果",
+    tags: ["carousel"]
+  },
+  {
+    title: "bar-loading",
+    description: "四条加载效果",
+    tags: ["loading"]
+  },
+  {
+    title: "full-page-burger-navigation",
+    description: "覆盖整页的汉堡菜单导航",
+    tags: ["menu", "hover", "fullscreen"]
+  },
+  {
+    title: "circular-spinning-text",
+    description: "motion path实现的环形文字",
+    tags: ["text", "motion path"]
+  },
+  {
+    title: "profile-card",
+    description: "我的社交名片",
+    tags: ["card", "profile"]
+  },
+  {
+    title: "particle-button",
+    description: "粒子特效按钮",
+    tags: ["button", "particle", "random"]
+  },
+  {
+    title: "multi-buttons-message-box",
+    description: "精致的留言板",
+    tags: ["card", "button"]
+  },
+  {
+    title: "mawaru",
+    description: "CSS Houdidi conic-gradient 动画",
+    tags: ["animation", "staggered"]
+  },
+  {
+    title: "page-transition-carousel",
+    description: "页面转场效果结合轮播图",
+    tags: ["carousel", "fullscreen", "transition", "staggered"]
+  },
+  {
+    title: "inverted-color-beating-cursor",
+    description: "跳动反色光标跟随效果",
+    tags: ["cursor", "hover"]
+  },
+  {
+    title: "button-hover-multiple-border-stroke",
+    description: "按钮多重边框悬浮效果",
+    tags: ["button", "hover", "border"]
+  },
+  {
+    title: "crimson-crescent-loading",
+    description: "box-shadow: inset实现月牙形",
+    tags: ["loading", "glow"]
+  },
+  {
+    title: "gauge",
+    description: "conic-gradient实现的度量计",
+    tags: ["gauge"]
+  },
+  {
+    title: "shinchou-menu",
+    description: "慎重勇者风格菜单",
+    tags: ["menu", "hover", "staggered"]
+  },
+  {
+    title: "staggered-landin-text",
+    description: "交错降落的文本",
+    tags: ["text", "staggered"]
+  },
+  {
+    title: "staggered-float-text-menu",
+    description: "交错悬浮文字菜单",
+    tags: ["menu", "hover", "text", "staggered"]
+  },
+  {
+    title: "animated-image-slider",
+    description: "动态滑动幻灯片",
+    tags: ["slider", "image", "fullscreen", "staggered"]
+  },
+  {
+    title: "menu-hover-fill-text",
+    description: "悬浮菜单填充文本",
+    tags: ["menu", "hover", "text", "fill"]
+  },
+  {
+    title: "staggered-rise-in-text",
+    description: "交错文本显现",
+    tags: ["header", "text", "staggered"]
+  },
+  {
+    title: "menu-hover-image",
+    description: "菜单悬浮图片显现",
+    tags: ["menu", "hover", "image"]
+  },
+  {
+    title: "card-flip-reflection",
+    description: "卡片倒影翻转效果",
+    tags: ["3d", "card", "hover", "flip", "reflection"]
+  },
+  {
+    title: "ken-burns-effect",
+    description: "镜头拉伸页面特效",
+    tags: ["ken burns", "staggered", "fullscreen"]
+  },
+  {
+    title: "sticky-sections",
+    description: "粘性章节页面特效",
+    tags: ["sticky", "fullscreen"]
+  },
+  {
+    title: "parallax",
+    description: "滚动视差页面特效",
+    tags: ["parallax", "fullscreen"]
+  },
+  {
+    title: "button-collection",
+    description: "有意思的按钮合集",
+    tags: ["button", "hover", "cta"]
+  },
+  {
+    title: "snow",
+    description: "雪花飘飘",
+    tags: ["snow", "staggered"]
+  },
+  {
+    title: "star-rating",
+    description: "5星评分",
+    tags: ["radio", "rating"]
+  },
+  {
+    title: "tabs",
+    description: "动态的渐变标签页",
+    tags: ["tabs", "gradient", "hover"]
+  },
+  {
+    title: "pagination",
+    description: "分页栏",
+    tags: ["pagination"]
+  },
+  {
+    title: "accordion-panel",
+    description: "折叠面板",
+    tags: ["accordion", "panel"]
+  },
+  {
+    title: "3d-dropdown-menu",
+    description: "3D旋转变换的下拉菜单",
+    tags: ["3d", "menu", "dropdown", "hover"]
+  },
+  {
+    title: "gradient-border",
+    description: "渐变边框",
+    tags: ["border", "gradient"]
+  },
+  {
+    title: "header-with-slide-bar",
+    description: "横条划过显现的标题",
+    tags: ["text", "header", "slide"]
+  },
+  {
+    title: "isometric-icon-nav-bar",
+    description: "等距的图标导航",
+    tags: ["3d", "isometric", "nav", "hover"]
+  },
+  {
+    title: "staggered-shrinking-loading",
+    description: "交错的文本缩放加载效果",
+    tags: ["loading", "text", "staggered"]
+  },
+  {
+    title: "rotating-text",
+    description: "翻滚的文字",
+    tags: ["text", "rotate", "3d", "staggered"]
+  },
+  {
+    title: "flip-card-clock",
+    description: "翻牌时钟",
+    tags: ["clock", "flip", "3d"]
+  },
+  {
     title: "video-mask-text",
     description: "视频文字蒙版",
     tags: ["video", "text", "mask"]
@@ -32,7 +314,7 @@ export default [
   {
     title: "isometric-icon-hover",
     description: "3d等距图标悬浮效果",
-    tags: ["3d", "isometric", "icon", "hover"]
+    tags: ["3d", "isometric", "hover"]
   },
   {
     title: "glowing-list-hover",
@@ -88,11 +370,6 @@ export default [
     title: "carousel",
     description: "精致的轮播图",
     tags: ["carousel", "slider", "scroll"]
-  },
-  {
-    title: "button-collection",
-    description: "有意思的按钮合集",
-    tags: ["button", "hover", "cta"]
   },
   {
     title: "split-text-menu",

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #ECEFFC;
+}
+
+.accordion {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 30rem;
+  font-family: Lato, sans-serif;
+  list-style-type: none;
+}
+.accordion .accordion-item a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #7f8c8d;
+  border-bottom: 1px solid rgba(128, 141, 142, 0.5);
+}
+.accordion .accordion-item a svg {
+  position: absolute;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #7f8c8d;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.accordion .accordion-item a:hover, .accordion .accordion-item a:active {
+  color: #3498db;
+  border-bottom: 1px solid currentColor;
+}
+.accordion .accordion-item a:hover svg, .accordion .accordion-item a:active svg {
+  border-color: currentColor;
+  fill: currentColor;
+}
+.accordion .accordion-item a.active svg {
+  transform: rotate(0.5turn);
+}
+.accordion .accordion-item .content {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.3s 0.15s;
+}
+.accordion .accordion-item .content p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+.accordion .accordion-item .content.active {
+  padding: 1rem;
+  max-height: 10rem;
+  opacity: 1;
+}
